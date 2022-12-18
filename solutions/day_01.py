@@ -24,10 +24,10 @@ def part1(input):
 
 
 def test_part1():
-    input = pathlib.Path("input-01-test.txt").read_text()
+    input = pathlib.Path("data/input-01-test.txt").read_text()
     assert part1(input) == 24000
 
-    input = pathlib.Path("input-01-real.txt").read_text()
+    input = pathlib.Path("data/input-01-real.txt").read_text()
     assert part1(input) == 71124
 
 
@@ -38,8 +38,8 @@ def part2(input):
 
 
 def test_part2():
-    input = pathlib.Path("input-01-test.txt").read_text()
+    input = pathlib.Path("data/input-01-test.txt").read_text()
     assert part2(input) == 45000
 
-    input = pathlib.Path("input-01-real.txt").read_text()
+    input = pathlib.Path("data/input-01-real.txt").read_text()
     assert part2(input) == 204639
