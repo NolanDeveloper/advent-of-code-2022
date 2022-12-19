@@ -16,29 +16,21 @@ class ChangeDirectoryTarget:
 
 
 class Root(ChangeDirectoryTarget):
-    def __str__(self):
-        return '/'
+    pass
 
 
 class Out(ChangeDirectoryTarget):
-    def __str__(self):
-        return '..'
+    pass
 
 
 @dataclass
 class In(ChangeDirectoryTarget):
     name: str
 
-    def __str__(self):
-        return self.name
-
 
 @dataclass
 class ChangeDirectory(TerminalCommand):
     target: ChangeDirectoryTarget
-
-    def __str__(self):
-        return f'cd {self.target}'
 
 
 @dataclass
