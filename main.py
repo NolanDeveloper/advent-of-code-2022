@@ -1,6 +1,7 @@
 import argparse
 import importlib
 import sys
+from pathlib import Path
 
 
 if __name__ == '__main__':
@@ -11,11 +12,18 @@ if __name__ == '__main__':
             " solution."
         )
     )
-    parser.add_argument("day", type=int)
-    parser.add_argument("part", type=int, choices=[1, 2])
+    parser.add_argument("day", type=int, help="the number of the day for which the solution needs to be tried")
+    parser.add_argument("part", type=int, choices=[1, 2], help="the part of the day")
+    parser.add_argument(
+        "--file", "-f",
+        type=str,
+        default=None,
+        help="provide input from a file, by default input is taken from stdin"
+    )
     args = parser.parse_args()
 
     solutions = importlib.import_module(f"solutions.day_{args.day:02}")
     solve = solutions.part1 if args.part == 1 else solutions.part2
-    result = solve(sys.stdin.read())
+    input_text = Path(args.file).read_text() if args.file else sys.stdin.read()
+    result = solve(input_text)
     print(result)
