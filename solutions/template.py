@@ -10,7 +10,11 @@ def part1(input: str):
 
 
 def test_part1():
-    pass
+    input = pathlib.Path("data/input-XX-test.txt").read_text()
+    assert part1(input) == 0
+
+    input = pathlib.Path("data/input-XX-real.txt").read_text()
+    assert part1(input) == 0
 
 
 def part2(input: str):
@@ -18,4 +22,8 @@ def part2(input: str):
 
 
 def test_part2():
-    pass
+    input = pathlib.Path("data/input-XX-test.txt").read_text()
+    assert part2(input) == 0
+
+    input = pathlib.Path("data/input-XX-real.txt").read_text()
+    assert part2(input) == 0
