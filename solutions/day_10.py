@@ -50,7 +50,7 @@ def part2(text: str):
             cycle()
             value = int(parts[1])
             register_x += value
-    return display
+    return '\n'.join(''.join(row) for row in display)
 
 
 def test():
@@ -67,6 +67,4 @@ def test():
  #   # #  # ## ###  # #  # ## ###  # #  
 #    # #  #  # # #  # #  #  # # #  # #  
 #### #  #  ### #  # #  #  ### #  # #  # """[1:]
-    display = part2(real_text)
-    part2_result = '\n'.join(''.join(row) for row in display)
-    assert part2_result == expected_result
+    assert part2(real_text) == expected_result
