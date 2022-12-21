@@ -15,9 +15,9 @@ def part2(text: str):
 
 def test():
     day = int(__file__[-5:-3])
-    test_input_path = pathlib.Path(f"data/input-{day:02}-test.txt")
-    real_input_path = pathlib.Path(f"data/input-{day:02}-real.txt")
-    assert part1(test_input_path.read_text()) == 0
-    assert part1(real_input_path.read_text()) == 0
-    assert part2(test_input_path.read_text()) == 0
-    assert part2(real_input_path.read_text()) == 0
+    test_text = pathlib.Path(f"data/input-{day:02}-test.txt").read_text()
+    real_text = pathlib.Path(f"data/input-{day:02}-real.txt").read_text()
+    assert part1(test_text) == 0
+    assert part1(real_text) == 0
+    assert part2(test_text) == 0
+    assert part2(real_text) == 0
