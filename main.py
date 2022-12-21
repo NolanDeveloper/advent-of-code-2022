@@ -12,8 +12,8 @@ if __name__ == '__main__':
             " solution."
         )
     )
-    parser.add_argument("day", type=int, help="the number of the day for which the solution needs to be tried")
-    parser.add_argument("part", type=int, choices=[1, 2], help="the part of the day")
+    parser.add_argument("day", type=int, help="number of the day for which the solution you need a solution")
+    parser.add_argument("part", type=int, choices=[1, 2], help="part of the day")
     parser.add_argument(
         "--file", "-f",
         type=str,
